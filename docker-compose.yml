@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres
+    env_file:
+      - ./backend/env/db.env
+
+  api:
+    build: ./backend
+    env_file:
+      - ./backend/env/db.env
+    volumes:
+      - ./backend:/opt/backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    command: bash ./scripts/runserver.sh
