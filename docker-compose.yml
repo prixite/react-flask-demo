@@ -6,7 +6,7 @@ services:
     env_file:
       - ./backend/env/db.env
 
-  api:
+  backend:
     build: ./backend
     env_file:
       - ./backend/env/db.env
