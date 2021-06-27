@@ -8,7 +8,7 @@ def hello_world():
     return "<p>Hello, World!</p>"
 
 
-@app.route("/profile")
+@app.route("/api/profile")
 def profile():
     return dict(
         name='Umair Khan',
