@@ -11,7 +11,7 @@ def hello_world():
 @app.route("/api/profile")
 def profile():
     return dict(
-        name='Umair Khan',
-        email='umair@example.com',
-        country='Pakistan',
+        name='John Doe',
+        email='john@example.com',
+        country='Temeria',
     )
