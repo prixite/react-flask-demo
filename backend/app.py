@@ -26,3 +26,14 @@ def user_list():
     ]
 
     return jsonify(users)
+
+
+@app.route("/api/countries")
+def country_list():
+    countries = [
+        dict(name='Cintra', id='cintra'),
+        dict(name='Rivia', id='rivia'),
+        dict(name='Aedirn', id='aedirn'),
+    ]
+
+    return jsonify(countries)

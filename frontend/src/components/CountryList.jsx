@@ -1,22 +1,33 @@
-export function CountryList () {
-  const countries = [
-    { name: 'Pakistan', id: 'pak' },
-    { name: 'United States of America', id: 'usa' },
-    { name: 'England', id: 'eng' }
-  ]
+import React from 'react'
 
-  const rows = []
-  countries.forEach((country) => {
-    rows.push(
-      <li key={country.id}>{country.name}</li>
+export class CountryList extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { countries: [] }
+  }
+
+  componentDidMount () {
+    fetch('/api/countries')
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({ countries: result })
+      })
+  }
+
+  render () {
+    const countries = this.state.countries
+
+    return (
+      <div>
+        <a href='/'>Home</a>
+        <h1>Country List</h1>
+        <ul>{
+          countries.map((country) => {
+            return <li key={country.id}>{country.name}</li>
+          })
+          }
+        </ul>
+      </div>
     )
-  })
-
-  return (
-    <div>
-      <a href='/'>Home</a>
-      <h1>Country List</h1>
-      <ul>{rows}</ul>
-    </div>
-  )
+  }
 }
