@@ -1,16 +1,32 @@
-export function UserList () {
-  const users = [
-    { name: 'Umair Khan', id: 'umair' },
-    { name: 'John Doe', id: 'john' },
-  ]
+import React from 'react'
 
-  const elements = users.map(({name, id}) => <li key={id}>{name}</li>)
+export class UserList extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {'users': []}
+  }
 
-  return (
-    <div>
-      <a href='/'>Home</a>
-      <h1>User List</h1>
-      <ul>{elements}</ul>
-    </div>
-  )
+  componentDidMount () {
+    fetch('/api/users')
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({users: result});
+      })
+  }
+
+  render () {
+    const users = this.state.users;
+
+    return (
+      <div>
+        <a href='/'>Home</a>
+        <h1>User List</h1>
+        <ul>{
+          users.map((user) => {
+            return <li key={user.id}>{user.name}</li>
+          })
+        }</ul>
+      </div>
+    )
+  }
 }
