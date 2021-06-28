@@ -3,19 +3,19 @@ import React from 'react'
 export class UserList extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {'users': []}
+    this.state = { users: [] }
   }
 
   componentDidMount () {
     fetch('/api/users')
       .then(res => res.json())
       .then((result) => {
-        this.setState({users: result});
+        this.setState({ users: result })
       })
   }
 
   render () {
-    const users = this.state.users;
+    const users = this.state.users
 
     return (
       <div>
@@ -25,7 +25,8 @@ export class UserList extends React.Component {
           users.map((user) => {
             return <li key={user.id}>{user.name}</li>
           })
-        }</ul>
+        }
+        </ul>
       </div>
     )
   }
