@@ -1,6 +1,6 @@
-# React Template
+# Backend for React Template
 
-Template to get started with ReactJS development.
+Template to get started with ReactJS and Flask development.
 
 ## Installation
 Run the following to start the Docker container:
@@ -14,6 +14,6 @@ docker-compose up -d
 Run the linter by doing:
 
 ```
-docker-compose exec frontend bash
+docker-compose exec backend bash
 ./scripts/lint.sh
 ```
