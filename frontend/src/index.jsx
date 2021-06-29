@@ -10,7 +10,6 @@ function App () {
   return (
     <Router>
       <div>
-        <h1>React Template</h1>
         <ul>
           <li><a href='/profile'>Profile</a></li>
           <li><a href='/users'>Users</a></li>
