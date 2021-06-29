@@ -19,7 +19,6 @@ export class Profile extends React.Component {
 
     return (
       <div>
-        <a href='/'>Home</a>
         <h1>Profile</h1>
         <p><b>Name</b>: {user.name}</p>
         <p><b>Email</b>: {user.email}</p>

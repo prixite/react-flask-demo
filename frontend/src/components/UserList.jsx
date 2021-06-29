@@ -19,7 +19,6 @@ export class UserList extends React.Component {
 
     return (
       <div>
-        <a href='/'>Home</a>
         <h1>User List</h1>
         <ul>{
           users.map((user) => {

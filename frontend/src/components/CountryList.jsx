@@ -19,7 +19,6 @@ export class CountryList extends React.Component {
 
     return (
       <div>
-        <a href='/'>Home</a>
         <h1>Country List</h1>
         <ul>{
           countries.map((country) => {
